@@ -200,6 +200,44 @@ build/
 После запуска приложение открывается из бокового меню Home Assistant. Используется
 Ingress, поэтому отдельный порт наружу для add-on не требуется.
 
+### Установка из GitHub-репозитория
+
+Для установки add-on напрямую из GitHub репозиторий должен иметь структуру с отдельным
+каталогом add-on:
+
+```text
+warehouse_app/
+├── repository.yaml
+└── warehouse/
+    ├── config.yaml
+    ├── Dockerfile
+    ├── package.json
+    ├── package-lock.json
+    ├── public/
+    ├── src/
+    └── addon/
+        └── warehouse/
+            └── server.py
+```
+
+После подготовки такой структуры:
+
+1. Откройте **Settings → Add-ons → Add-on Store**.
+2. Нажмите меню `⋮`.
+3. Выберите **Repositories**.
+4. Добавьте URL репозитория:
+
+   ```text
+   https://github.com/EuegeneMukh/warehouse_app
+   ```
+
+5. Найдите `Warehouse` в разделе add-on repository.
+6. Нажмите **Install**, затем **Start**.
+
+Текущая корневая структура проекта уже работает для Docker и локального add-on
+через `/addons/local`. Для удалённой установки GitHub требуется разместить файлы
+add-on внутри отдельного каталога `warehouse/`.
+
 ### Обновление add-on
 
 1. Создайте резервную копию через кнопку **💾 Копия**.
