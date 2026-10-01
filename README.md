@@ -26,15 +26,14 @@
 
 Для Docker:
 
-- Docker Desktop на macOS или Windows;
-- включённый Linux containers mode на Windows;
+- Docker;
+- включённый Linux containers mode если используется Windows;
 - доступ к интернету при первой сборке образа.
 
 Для Home Assistant:
 
 - Home Assistant OS;
-- доступ к каталогу `/addons/local` через Samba Share или SSH;
-- поддерживаемая архитектура устройства: `amd64`, `aarch64`, `armv7`, `armhf` или `i386`.
+- доступ к каталогу `/addons/local` через Samba Share или SSH при установке локально;
 
 ## Запуск в Docker
 
